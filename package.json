@@ -2,13 +2,22 @@
   "name": "angular2-template-component-project",
   "version": "1.0.0",
   "description": "Template project for Angular 2 components bundled with Webpack",
+  "contributors": [
+    {
+      "name": "Miguel María Martínez Echeverría",
+      "url": "https://github.com/mimarec"
+    }, {
+      "name": "Pablo Lázaro",
+      "url": "https://github.com/pablolazaro"
+    }
+  ],
+  "license": "MIT",
   "scripts": {
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "postinstall": "typings install",
     "start": "webpack-dev-server -d --inline --progress --port 8080",
     "test": "karma start"
   },
-  "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0-rc.6",
     "@angular/compiler": "2.0.0-rc.6",
