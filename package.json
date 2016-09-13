@@ -1,6 +1,6 @@
 {
   "name": "angular2-template-component-project",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Template project for Angular 2 components bundled with Webpack",
   "contributors": [
     {
@@ -18,7 +18,6 @@
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "dist": "rimraf dist && rimraf index.js && rimraf index.d.ts && ./node_modules/.bin/gulp dist",
     "postinstall": "typings install",
-   
     "start": "webpack-dev-server -d --inline --progress --port 8080",
     "test": "karma start",
     "protractor": "protractor",
