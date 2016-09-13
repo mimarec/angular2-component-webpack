@@ -1,5 +1,4 @@
 describe('App', () => {
-
   beforeEach(() => {
     browser.get('/');
   });
@@ -9,5 +8,4 @@ describe('App', () => {
     let result  = 'Angular2 Component Scaffold';
     expect(subject).toEqual(result);
   });
-
 });
