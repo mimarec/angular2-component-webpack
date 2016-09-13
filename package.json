@@ -13,11 +13,11 @@
     }
   ],
   "license": "MIT",
-  "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
     "dist": "rimraf dist && rimraf index.js && rimraf index.d.ts && ./node_modules/.bin/gulp dist",
     "postinstall": "typings install",
+    "prepublish": "npm run dist",
     "start": "webpack-dev-server -d --inline --progress --port 8080",
     "test": "karma start",
     "protractor": "protractor",
