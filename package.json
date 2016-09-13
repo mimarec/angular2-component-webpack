@@ -1,6 +1,6 @@
 {
   "name": "angular2-template-component-project",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Template project for Angular 2 components bundled with Webpack",
   "contributors": [
     {
