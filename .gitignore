@@ -6,3 +6,5 @@ link-checker-results.txt
 **/*npm-debug.log.*
 dist
 npm-debug.log
+index.js
+index.d.ts
