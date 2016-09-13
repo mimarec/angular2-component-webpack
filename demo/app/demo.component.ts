@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'demo-app',
-  template: `<test></test>`
+  template: `<scaffold></scaffold>`
 })
 export class DemoComponent {
 }
