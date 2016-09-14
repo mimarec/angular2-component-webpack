@@ -1,5 +1,8 @@
 **/*npm-debug.log.*
 .idea
+dist
+index.d.ts
+index.js
 jspm_packages
 link-checker-results.txt
 node_modules
