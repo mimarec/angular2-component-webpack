@@ -44,7 +44,7 @@ gulp.task('tsc', () => {
   return merge([
     tsResult.dts.pipe(gulp.dest(DIST_PATH)),
     tsResult.js
-      .pipe(sourcemaps.write())
+      .pipe(sourcemaps.write('.'))
       .pipe(gulp.dest(DIST_PATH))
   ]);
 });
