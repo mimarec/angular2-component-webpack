@@ -4,6 +4,7 @@ const merge = require('merge2');
 const glob = require('glob');
 const fs = require('fs');
 const runSequence = require('run-sequence');
+const sourcemaps = require('gulp-sourcemaps');
 
 const SRC_PATH = 'src';
 const DIST_PATH = 'dist';
@@ -18,7 +19,8 @@ const tsconfig = typescript.createProject({
   removeComments: false,
   sourceMap: true,
   suppressImplicitAnyIndexErrors: true,
-  target: "es5"
+  target: "es5",
+  sortOutput: true
 });
 
 gulp.task('copy', () => {
@@ -36,11 +38,14 @@ gulp.task('tsc', () => {
       'typings/index.d.ts',
       `!${SRC_PATH}/**/*.{spec,e2e}.ts`
     ])
+    .pipe(sourcemaps.init())
     .pipe(typescript(tsconfig));
 
   return merge([
     tsResult.dts.pipe(gulp.dest(DIST_PATH)),
-    tsResult.js.pipe(gulp.dest(DIST_PATH))
+    tsResult.js
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest(DIST_PATH))
   ]);
 });
 
