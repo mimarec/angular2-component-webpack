@@ -1,6 +1,6 @@
 {
   "name": "angular2-template-component-project",
-  "version": "0.0.3",
+  "version": "0.0.10",
   "description": "Template project for Angular 2 components bundled with Webpack",
   "contributors": [
     {
@@ -13,10 +13,12 @@
     }
   ],
   "license": "MIT",
+  "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
-    "dist": "rimraf dist && tsc -p tsconfig.dist.json",
+    "dist": "rimraf dist && rimraf index.js && rimraf index.d.ts && ./node_modules/.bin/gulp dist",
     "postinstall": "typings install",
+    "preversion": "npm run dist",
     "start": "webpack-dev-server -d --inline --progress --port 8080",
     "test": "karma start",
     "protractor": "protractor",
@@ -37,7 +39,6 @@
     "@angular/platform-browser-dynamic": "2.0.0-rc.7",
     "@angular/router": "3.0.0-rc.3",
     "@angular/upgrade": "2.0.0-rc.7",
-
     "angular2-in-memory-web-api": "0.0.19",
     "bootstrap": "^3.3.6",
     "core-js": "^2.4.1",
@@ -47,10 +48,13 @@
     "zone.js": "^0.6.21"
   },
   "devDependencies": {
-    "angular2-template-loader": "^0.4.0",
+    "angular2-template-loader": "^0.5.0",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.8.5",
+    "glob": "^7.0.6",
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.6",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.15.0",
     "jasmine-core": "^2.4.1",
@@ -59,6 +63,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^1.7.0",
+    "merge2": "^1.0.2",
     "node-sass": "^3.9.3",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.7",
@@ -67,6 +72,7 @@
     "protractor": "^4.0.7",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
+    "run-sequence": "^1.2.2",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "to-string-loader": "^1.1.4",
